@@ -1,7 +1,7 @@
 let IS_PROD = true;
 
 const server = IS_PROD ? 
-  "https://vmeet-3a1l.onrender.com"  :
+  "https://ai-code-reviewer-1-cafi.onrender.com"  :
    "http://localhost:3000"
    
 
