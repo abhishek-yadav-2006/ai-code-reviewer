@@ -7,6 +7,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from 'axios'
 import './App.css'
+import server from './environment'
 
 function App() {
   const [ count, setCount ] = useState(0)
@@ -21,7 +22,9 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+    console.log("Using server:", server);
+
+    const response = await axios.post(`${server}/ai/get-review`, { code })   //  http://localhost:3000
     setReview(response.data)
   }
 
